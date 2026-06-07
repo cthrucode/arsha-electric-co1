@@ -1,0 +1,8 @@
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { business, services, cities } from '../../data';
+
+type Props={params:Promise<{city:string}>};
+export async function generateStaticParams(){return cities.map(c=>({city:c.slug}));}
+export async function generateMetadata({params}:Props){const {city}=await params; const c=cities.find(x=>x.slug===city); if(!c)return{}; return {title:`Electrician in ${c.name}, ${c.state}`,description:`Arsha Electric.co provides electrical repairs, lighting, EV chargers, security cameras, and smart home solutions in ${c.name}, ${c.state}.`};}
+export default async function CityPage({params}:Props){const {city}=await params; const c=cities.find(x=>x.slug===city); if(!c)notFound(); return <main><section className="page-hero"><div className="container"><div className="crumb">Service Area</div><h1>Electrician in {c.name}, {c.state}</h1><p className="lead">Electrical, low-voltage, and smart home services for {c.name} homeowners and small businesses.</p></div></section><section className="section"><div className="container two-col"><article><h2>Arsha Electric.co serves {c.name}</h2><p>Looking for an electrician in {c.name}, {c.state}? Arsha Electric.co focuses on practical electrical repairs, lighting upgrades, EV charger planning, camera installation, and smart home solutions.</p><div className="grid services">{services.slice(0,8).map(s=><Link className="card" href={`/services/${s.slug}`} key={s.slug}><h3>{s.title}</h3><p>{s.short}</p></Link>)}</div></article><aside className="sidebar card"><h3>Local contact</h3><p>{business.phone}</p><p>{business.email}</p><Link className="btn" href="/contact">Request Estimate</Link></aside></div></section></main>}

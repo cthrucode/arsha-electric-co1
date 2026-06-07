@@ -1,0 +1,2 @@
+export const metadata={title:'Privacy Policy'};
+export default function Privacy(){return <main><section className="page-hero"><div className="container"><h1>Privacy Policy</h1></div></section><section className="section"><div className="container"><p>This website collects information you voluntarily submit through forms or email links so Arsha Electric.co can respond to service requests. Replace this placeholder with a full policy before launch.</p></div></section></main>}

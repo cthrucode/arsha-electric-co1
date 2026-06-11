@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { FaChargingStation } from 'react-icons/fa';
 import { business, services, cities } from './data';
 
 export default function Home() {
@@ -53,17 +54,22 @@ export default function Home() {
           </div>
 
           <div className="hero-card">
-            <div className="logo-panel">
-              <Image src="/arsha-logo.png" alt="Arsha Electric.co" width={420} height={420} />
-            </div>
+  <FaChargingStation className="hero-ev-icon" />
 
-            <h3>Level 2 EV charger installs done cleanly</h3>
+  <h3>EV Charger Specialists</h3>
 
-            <p>
-              Dedicated circuits, garage installs, load planning, charger mounting,
-              and future-ready electrical upgrades.
-            </p>
-          </div>
+  <p>
+    Tesla, ChargePoint, Wallbox, dedicated circuits,
+    panel upgrades, and residential EV charging solutions.
+  </p>
+
+  <Link
+    className="btn"
+    href="/services/ev-charger-installation"
+  >
+    Learn More
+  </Link>
+</div>
         </div>
       </section>
 

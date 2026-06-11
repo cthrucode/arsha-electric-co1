@@ -1,7 +1,7 @@
 export const business = {
   name: 'Arsha Electric.co',
   legalName: 'Arsha Electric.co',
-  phone: '240-525-0625',
+  phone: '(240)-525-0625',
   email: 'hello@arshaelectric.co',
   area: 'Silver Spring, MD and the DMV',
   addressLocality: 'Silver Spring',

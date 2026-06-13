@@ -38,7 +38,7 @@ export default function Home() {
           <div>
             <div className="eyebrow">EV Chargers • Electrical • Smart Solutions</div>
 
-            <h1>EV Charger Installation in Silver Spring and the DMV.</h1>
+            <h1>Fast, Reliable EV Charger Installation Across the DMV Region</h1>
 
             <p className="lead">
               Arsha Electric.co helps homeowners and small businesses install Level 2 EV chargers,
@@ -76,7 +76,7 @@ export default function Home() {
       {/* 20% - TRUST / REVIEWS */}
       <section className="section">
         <div className="container">
-          <h2>Built for clean, professional electrical work</h2>
+          <h2>We build clean, and professional electrical work</h2>
 
           <div className="grid services">
             <div className="card">

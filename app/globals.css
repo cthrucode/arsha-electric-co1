@@ -1,9 +1,393 @@
-:root{--blue:#06245d;--black:#050505;--text:#16181d;--muted:#667085;--bg:#f7f8fb;--line:#e7e9ef}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff}a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}.topbar{background:#050505;color:#fff;font-size:14px}.topbar .container{display:flex;justify-content:space-between;gap:20px;padding:10px 0}.nav{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:20}.nav .container{display:flex;align-items:center;justify-content:space-between;padding:15px 0}.brand{display:flex;align-items:center;gap:12px;font-weight:800}.brand img{width:130px;height:auto}.menu{display:flex;gap:22px;align-items:center;font-weight:700;font-size:14px}.btn{display:inline-block;background:var(--blue);color:#fff;padding:13px 18px;border-radius:999px;font-weight:800}.btn.dark{background:#050505}.hero{background:linear-gradient(135deg,#050505 0%,#101827 45%,#06245d 100%);color:#fff;padding:86px 0}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:46px;align-items:center}.eyebrow{color:#97b8ff;text-transform:uppercase;letter-spacing:.18em;font-weight:800;font-size:13px}h1{font-size:clamp(38px,6vw,72px);line-height:.98;margin:14px 0}h2{font-size:clamp(30px,4vw,46px);margin:0 0 16px}h3{margin:0 0 10px;font-size:22px}.lead{font-size:20px;line-height:1.6;color:#e5e7eb}.hero-card{background:#fff;color:var(--text);padding:30px;border-radius:28px;box-shadow:0 25px 80px rgba(0,0,0,.25)}.logo-panel{background:#050505;border-radius:22px;padding:28px;text-align:center;margin-bottom:20px}.logo-panel img{max-width:100%;height:auto}.grid{display:grid;gap:22px}.services{grid-template-columns:repeat(4,1fr)}.areas{grid-template-columns:repeat(4,1fr)}.card{border:1px solid var(--line);border-radius:22px;padding:24px;background:#fff;box-shadow:0 8px 24px rgba(16,24,40,.05)}.card p{color:var(--muted);line-height:1.6}.section{padding:76px 0}.section.alt{background:var(--bg)}.split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}.check{display:grid;gap:13px;margin:22px 0}.check div{padding:14px 16px;border-radius:14px;background:#f2f5ff;border:1px solid #dce6ff}.cta{background:#050505;color:#fff;border-radius:30px;padding:42px;display:flex;justify-content:space-between;gap:25px;align-items:center}.footer{background:#050505;color:#cfd3dc;padding:45px 0}.footer strong{color:#fff}.page-hero{background:#07111f;color:#fff;padding:70px 0}.crumb{color:#97b8ff;font-weight:800}.two-col{display:grid;grid-template-columns:2fr 1fr;gap:30px}.sidebar{position:sticky;top:100px}.form{display:grid;gap:14px}.form input,.form textarea,.form select{width:100%;padding:14px;border:1px solid var(--line);border-radius:12px;font:inherit}.form button{border:0;cursor:pointer}.note{font-size:13px;color:var(--muted)}@media(max-width:850px){.hero-grid,.split,.two-col{grid-template-columns:1fr}.services,.areas{grid-template-columns:1fr}.menu{display:none}.topbar .container{display:block}.cta{display:block}.brand img{width:110px}}
-.hero-ev-icon {
-    font-size: 220px;
-    color: #000;
-    display: block;
-    margin: 0 auto 1rem;
+:root{
+  --blue:#06245d;
+  --black:#050505;
+  --text:#16181d;
+  --muted:#667085;
+  --bg:#f7f8fb;
+  --line:#e7e9ef;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:#fff;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+/* ===========================
+   TOP BAR
+=========================== */
+
+.topbar{
+  background:#050505;
+  color:#fff;
+  font-size:14px;
+}
+
+.topbar .container{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:10px 0;
+}
+
+/* ===========================
+   NAVIGATION
+=========================== */
+
+.nav{
+  position:sticky;
+  top:0;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  z-index:20;
+}
+
+.nav .container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:15px 0;
+}
+
+/* ===========================
+   BRAND LOGO
+=========================== */
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  font-weight:800;
+}
+
+.brand img{
+  width:260px;
+  height:auto;
+  display:block;
+  transition:transform .25s ease;
+}
+
+.brand:hover img{
+  transform:scale(1.02);
+}
+
+/* ===========================
+   MENU
+=========================== */
+
+.menu{
+  display:flex;
+  gap:22px;
+  align-items:center;
+  font-weight:700;
+  font-size:14px;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.btn{
+  display:inline-block;
+  background:var(--blue);
+  color:#fff;
+  padding:13px 18px;
+  border-radius:999px;
+  font-weight:800;
+}
+
+.btn.dark{
+  background:#050505;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+  background:linear-gradient(
+    135deg,
+    #050505 0%,
+    #101827 45%,
+    #06245d 100%
+  );
+  color:#fff;
+  padding:86px 0;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:46px;
+  align-items:center;
+}
+
+.eyebrow{
+  color:#97b8ff;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-weight:800;
+  font-size:13px;
+}
+
+h1{
+  font-size:clamp(38px,6vw,72px);
+  line-height:.98;
+  margin:14px 0;
+}
+
+h2{
+  font-size:clamp(30px,4vw,46px);
+  margin:0 0 16px;
+}
+
+h3{
+  margin:0 0 10px;
+  font-size:22px;
+}
+
+.lead{
+  font-size:20px;
+  line-height:1.6;
+  color:#e5e7eb;
+}
+
+/* ===========================
+   HERO CARD
+=========================== */
+
+.hero-card{
+  background:#fff;
+  color:var(--text);
+  padding:30px;
+  border-radius:28px;
+  box-shadow:0 25px 80px rgba(0,0,0,.25);
+}
+
+.logo-panel{
+  background:#050505;
+  border-radius:22px;
+  padding:28px;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.logo-panel img{
+  max-width:100%;
+  height:auto;
+}
+
+/* ===========================
+   GRIDS
+=========================== */
+
+.grid{
+  display:grid;
+  gap:22px;
+}
+
+.services{
+  grid-template-columns:repeat(4,1fr);
+}
+
+.areas{
+  grid-template-columns:repeat(4,1fr);
+}
+
+/* ===========================
+   CARDS
+=========================== */
+
+.card{
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:24px;
+  background:#fff;
+  box-shadow:0 8px 24px rgba(16,24,40,.05);
+}
+
+.card p{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* ===========================
+   SECTIONS
+=========================== */
+
+.section{
+  padding:76px 0;
+}
+
+.section.alt{
+  background:var(--bg);
+}
+
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:44px;
+  align-items:center;
+}
+
+.check{
+  display:grid;
+  gap:13px;
+  margin:22px 0;
+}
+
+.check div{
+  padding:14px 16px;
+  border-radius:14px;
+  background:#f2f5ff;
+  border:1px solid #dce6ff;
+}
+
+/* ===========================
+   CTA
+=========================== */
+
+.cta{
+  background:#050505;
+  color:#fff;
+  border-radius:30px;
+  padding:42px;
+  display:flex;
+  justify-content:space-between;
+  gap:25px;
+  align-items:center;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer{
+  background:#050505;
+  color:#cfd3dc;
+  padding:45px 0;
+}
+
+.footer strong{
+  color:#fff;
+}
+
+/* ===========================
+   PAGE HERO
+=========================== */
+
+.page-hero{
+  background:#07111f;
+  color:#fff;
+  padding:70px 0;
+}
+
+.crumb{
+  color:#97b8ff;
+  font-weight:800;
+}
+
+.two-col{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:30px;
+}
+
+.sidebar{
+  position:sticky;
+  top:100px;
+}
+
+/* ===========================
+   FORMS
+=========================== */
+
+.form{
+  display:grid;
+  gap:14px;
+}
+
+.form input,
+.form textarea,
+.form select{
+  width:100%;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  font:inherit;
+}
+
+.form button{
+  border:0;
+  cursor:pointer;
+}
+
+/* ===========================
+   NOTES
+=========================== */
+
+.note{
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* ===========================
+   EV ICON
+=========================== */
+
+.hero-ev-icon{
+  font-size:220px;
+  color:#000;
+  display:block;
+  margin:0 auto 1rem;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:850px){
+
+  .hero-grid,
+  .split,
+  .two-col{
+    grid-template-columns:1fr;
   }
 
-  
+  .services,
+  .areas{
+    grid-template-columns:1fr;
+  }
+
+  .menu{
+    display:none;
+  }
+
+  .topbar .container{
+    display:block;
+  }
+
+  .cta{
+    display:block;
+  }
+
+  .brand img{
+    width:180px;
+  }
+}
